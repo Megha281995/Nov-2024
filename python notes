@@ -1,0 +1,197 @@
+Data type conversion;
+to convert to string ==  str()
+to convert to integer == int()
+
+can we convert some data to float or boolean statments?
+input() ---- > to take the input from the user
+
+
+Lists:
+list_a = [1, "revan", True, 5.8]
+          0    1        2    3
+
+print(list_a[index])
+print(list_a[3])   _--------> 5.8
+************************************************************************
+import shutil
+shutil.copy('source', 'destination')
+
+import shutil
+import os
+shutil.copy('file_1.txt', 'file_2.txt')
+os.rename('file_2.txt', 'file_3.txt')
+
+
+import os
+os.makedirs('devops', exist_ok = True)
+
+import os
+if os.path.exists('devops'):
+    os.rmdir('devops')
+
+try and exception method ----- > not to interrupt the program execution    
+errorrs during execution - runtime error
+
+
+list_a = [1, 3, 5, 8, 10]
+print("Enter the index number to print its value")
+num = int(input())
+print(list_a[num])
+print("end of program")
+
+*******************************************************************************************
+try:
+    list_a = [1, 3, 5, 8, 10]
+    print("Enter the index number to print its value")
+    num = int(input())
+    print(list_a[num])
+except Exception as error:
+    print(error)
+finally:
+    print("End of execution")
+*******************************************************************************************
+try:
+    functions/loops/conditional statemnts
+
+**************************************************************************************
+list_a = [1, 3, "davanagere", 8.7, True]
+
+Dictionary:
+dict_a = {
+    "name":"revan,
+    "age": 20,
+}
+
+dict_a.items()  ------> to print all the content in the dict
+dict_a.keys()
+dict_a.values()
+
+******************************************************************************************
+
+import subprocess
+subprocess.run(['ls', '-lart'])
+
+*********************************************************************************
+import psutil
+install pip
+pip install psutil
+*********************************************************************************
+
+# to back up the files 
+
+import shutil
+import os
+from datetime import datetime
+
+# Backup a file with a timestamp
+source_file = 'app.log'
+backup_file = f'app_backup_{datetime.now().strftime("%Y%m%d_%H%M%S")}.log'
+shutil.copy(source_file, backup_file)
+print(f'Backup created: {backup_file}')
+***********************************************************************************
+# to Monitor the metrics
+
+import psutil
+
+# Get CPU and disk usage
+cpu = psutil.cpu_percent(interval=1)
+disk = psutil.disk_usage('/')
+
+print(f'CPU Usage: {cpu}%')
+print(f'Disk Usage: {disk.percent}%')
+************************************************************************************
+# reading the file into the list
+
+# Read all lines into a list
+with open('output.txt', 'r') as file:
+    lines = file.readlines()
+
+print(lines)
+
+*********************************************************************************
+# running shell commands and captuirng the output
+
+import subprocess
+
+# Capture the output of a command
+result = subprocess.run(['whoami'], capture_output=True, text=True)
+print(f'Current user: {result.stdout.strip()}')
+
+*********************************************************************************
+# List all files in a directory
+import os
+for filename in os.listdir('.'):
+    if os.path.isfile(filename):
+        print(filename)
+*******************************************************************************
+# file permissions
+
+import os
+import stat
+
+# Change file permission to read-only
+os.chmod('data.json', stat.S_IREAD)
+
+# Get file size
+print(f\"Size: {os.path.getsize('data.json')} bytes\")
+*********************************************************************************
+# Create 5 text files
+for i in range(1, 6):
+    filename = f'file_{i}.txt'
+    with open(filename, 'w') as f:
+        f.write(f'This is file {i}\n')
+    print(f'Created: {filename}')
+******************************************************************************
+# Delete multiple files 
+
+import os
+for i in range(1, 6):
+    filename = f'file_{i}.txt'
+    if os.path.exists(filename):
+        os.remove(filename)
+        print(f'Deleted: {filename}')
+    else:
+        print(f'File not found: {filename}')
+********************************************************************************
+# cleanup old files based on the tims (days)
+
+import os
+import time
+
+directory = '/tmp'
+days_old = 7
+now = time.time()
+
+for filename in os.listdir(directory):
+    filepath = os.path.join(directory, filename)
+    if os.path.isfile(filepath) and os.stat(filepath).st_mtime < now - days_old * 86400:
+        os.remove(filepath)
+        print(f'🗑️ Deleted: {filepath}')
+****************************************************************************************
+# to start and stop the service
+
+import subprocess
+
+service_name = 'nginx'
+
+try:
+    subprocess.run(['sudo', 'systemctl', 'restart', service_name], check=True)
+    print(f'✅ {service_name} restarted successfully')
+except subprocess.CalledProcessError:
+    print(f'❌ Failed to restart {service_name}')
+**********************************************************************************************
+
+# Safe file deletions 
+
+import os
+
+filename = "temp.log"
+
+try:
+    os.remove(filename)
+    print(f"✅ Deleted {filename}")
+except FileNotFoundError:
+    print(f"⚠️ File {filename} does not exist.")
+except PermissionError:
+    print(f"❌ No permission to delete {filename}")
+******************************************************************************************************
