@@ -1,0 +1,90 @@
+loops --- > while loop and for loop
+while -  condition
+for - limits --- range
+
+
+for <name> in range(start_index,end_index):
+    <define the task>
+
+first_num = 2
+second_number = 5
+total = 0
+for num in range(first_num,second_number):
+	total = num + total
+	print(total)
+print(total)
+
+for num in range(2:5):
+	total = 2 + 0
+
+total = 2
+
+	total = 3 + 2
+total = 5
+	total = 4 + 5
+total = 9 
+
+
+first_num = 2
+second_num = 5
+total = 0
+for num in range(first_num, second_num):
+    total = total + num 
+    print(total)
+print(total)
+
+
+name = "revan"
+length_of_string = len(name)  ------ find the total chr   5  range(5)
+final_string = ""
+for letter in name:
+	print(letter)
+
+letter = r
+letter = e
+
+
+            r e v a n
+index       0 1 2 3 4    ---- for 
+len         1 2 3 4 5    ----- for 
+
+
+while(first_num <= second_num):
+
+operators:
+== -----> equal to 
+!= ------> not equal to 
+>=  ------> greater than or equal to 
+<= -------> less than or equal to 
+
+
+1) to find factorial of a number 
+2) sum of numbers in the given range
+3) to print prime numbers in given range
+4) to print even/odd numbers in the range
+5) palidrome 
+6) armstrong number
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
