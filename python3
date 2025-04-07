@@ -1,0 +1,88 @@
+for num in range(start_index, end_index, step_index)
+
+for num in range(2, 51, 2):
+    print(num)
+
+
+conditional statements:
+if <condition>:
+    <task>
+else:
+    <task>
+    
+if <condition1>:
+    <task>
+elif <condition2>:
+    <task>
+else:
+    <task>
+
+
+num = 19
+if (num >= 21):
+    print(num)
+else:
+    print("number is small")
+*************************************************
+num = 19
+if (num > 21):
+    print("num is greater than 21")
+elif (num < 21):
+    print("num is less than 21")
+else: 
+    print("number is unknown")
+*******************************************************
+Functions:
+
+def <function_name>():
+    <task>
+
+<function_name>()
+
+***************************************************
+
+def greeting():
+    for num in range(1, 10):
+        if (num%2 == 0):
+            print(num)
+
+greeting()
+***************************************************
+
+def greeting(x, y):
+    for num in range(1, 10):
+        if (num%2 == 0):
+            print(num)
+start_index = 1
+end_index = 10
+greeting(start_index, end_index)
+
+***************************************************
+Scripting:
+# reading the file and printing
+with open('testing.txt', 'r') as file:
+    for line in file:
+        print(line.strip())
+**********************************************************
+# to write content to the file 
+with open("testing.txt", 'w') as file:
+    file.write("I have erased old data\n")
+    file.write("this is the new content\n")
+
+# To read the content and print the lines
+with open("testing.txt", 'r')as file:
+    for line in file:
+        print(line.strip())
+
+# to append content to the file 
+with open("testing.txt", 'a') as file:
+    file.write("I am appending the content  to the file\n")
+    file.write("this is the new content\n")
+
+# To read the content and print the lines
+with open("testing.txt", 'r')as file:
+    for line in file:
+        print(line.strip())
+************************************************************
+
+
